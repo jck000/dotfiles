@@ -118,6 +118,53 @@ if [ -f ~/.jack_custom ]; then
     . ~/.jack_custom
 fi
 
+#
+# Other custom stuff
+#
+
+# set editor for commmand line
+set -o vi
+
+TODAY=`date +%Y/%m/%d`
+
+# bc settings
+BC_ENV_ARGS=".bcrc"
+
+# Options for svn and git
+VISUAL='vim -c "set background=dark"';export VISUAL
+EDITOR='vim -c "set background=dark"';export EDITOR
+
+# Save old TZ
+OLDTZ=$TZ;export OLDTZ  ### Used to set TZ on tltail.  tltail unserts TZ.
+
+# Reset TZ to PT
+TZ='PST8PDT';export TZ  
+
+### more ls options
+alias l='ls -al'
+alias lsd='ls -ald'
+alias ll='ls -al|less'
+
+### color for ls
+eval `dircolors .colorsrc`
+
+# vi options
+alias vi='vim -c "set background=dark"'  # set options for vi
+alias v='vi -R'                          # Read only vi
+
+# PerlTidy
+alias pt='perltidy -b -i=2 -hsc -ce -bar -otr -lp -vt=0 -vtc=0 -cab=0 -bbc -bbs'
+
+
+
+
+
+
+
+
+
+
+
 
 
  
